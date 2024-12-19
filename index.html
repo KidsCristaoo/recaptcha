@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Cristão – Pre-Sell</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const userAgent = navigator.userAgent.toLowerCase();
+
+        // Lista de User-Agents para detectar bots
+        const botAgents = [
+          "facebookexternalhit", // Facebook bot
+          "facebot",             // Facebook crawler
+          "googlebot",           // Google bot
+          "bingbot",             // Bing bot
+          "crawler"              // Outros bots genéricos
+        ];
+
+        // Verificar se o visitante é um bot
+        const isBot = botAgents.some(bot => userAgent.includes(bot));
+
+        if (isBot) {
+          // Bots são redirecionados para uma página alternativa
+          window.location.href = "https://example.com/bot-friendly-page"; // Redirecionar para uma página amigável para bots
+        } else {
+          // Mostrar conteúdo para humanos
+          console.log("Visitante humano detectado.");
+        }
+      });
+
+      function simulateRecaptcha() {
+        const recaptchaCheckbox = document.getElementById('recaptcha-checkbox');
+        const recaptchaErrorMessage = document.getElementById('recaptcha-error-message');
+
+        if (recaptchaCheckbox.checked) {
+          alert("Você passou na verificação do reCAPTCHA (simulação).");
+          window.location.href = "https://kidscristaoo.github.io/kidscristaoo/"; // Redirecionar para o site real
+        } else {
+          recaptchaErrorMessage.style.display = 'block';
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url('https://www.example.com/sua-imagem-de-fundo.jpg'); /* Imagem de fundo */
+        background-size: cover;
+        background-position: center;
+        color: white;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      h1 {
+        font-size: 48px;
+        color: #007BFF;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 20px;
+        color: white;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 10px;
+        text-decoration: none;
+        cursor: pointer;
+        margin-top: 30px;
+      }
+
+      .cta-button:hover {
+        background-color: #0056b3;
+      }
+
+      .recaptcha-container {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .recaptcha-checkbox {
+        margin-right: 10px;
+        accent-color: #007BFF;
+        transform: scale(1.3); /* Tamanho aumentado para a caixa */
+      }
+
+      .recaptcha-error-message {
+        display: none;
+        color: red;
+        margin-top: 10px;
+      }
+
+      .recaptcha-checkbox + label {
+        font-size: 18px;
+        color: #333;
+        vertical-align: middle;
+      }
+
+      .recaptcha-button {
+        margin-top: 20px;
+        padding: 15px 30px;
+        font-size: 18px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .recaptcha-button:hover {
+        background-color: #218838;
+      }
+
+      /* Ícone do reCAPTCHA */
+      .recaptcha-icon {
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+
+      .cta-button img {
+        margin-left: 10px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bem-vindo, confirme que você é uma pessoa real.</h1>
+      <p>Transforme a vida dos seus pequenos com nossos conteúdos exclusivos para crianças cristãs. Prepare-se para uma jornada incrível!</p>
+
+      <div class="recaptcha-container">
+        <!-- Ícone do reCAPTCHA -->
+        <img src="https://www.google.com/recaptcha/about/images/reCAPTCHA-logo@2x.png" alt="reCAPTCHA Logo" class="recaptcha-icon" />
+        <input type="checkbox" class="recaptcha-checkbox" id="recaptcha-checkbox" />
+        <label for="recaptcha-checkbox">Eu não sou um robô</label>
+        <br>
+        <button class="recaptcha-button" onclick="simulateRecaptcha()">Confirmar</button>
+        <p id="recaptcha-error-message" class="recaptcha-error-message">Por favor, marque a caixa para confirmar que você não é um robô.</p>
+      </div>
+
+    </div>
+  </body>
+</html>
